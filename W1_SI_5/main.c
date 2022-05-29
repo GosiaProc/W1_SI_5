@@ -4,12 +4,37 @@
 #define ENTER 13
 #define TAB 9
 #define BKSP 8
-#define SPACE 32 
+#define SPACE 32
+
+char word[100];
+char word2[100];
+
+void enter_word();
 
 int main()
 {
-	char word [100] ="";
-	char word2[100]="";
+
+	enter_word();
+	printf("\nGRACZ 2: odgadnij slowo:\n");
+	gets(word2);
+	int result = strcmp(word, word2);
+
+	printf("porownanie %d\n", result);
+
+	if (result = 1) {
+		printf("\n Wygrałes");
+	}
+	else
+	{
+		printf("\n Sprobuj jeszcze raz ");
+	}
+	getch();
+
+	return 0;
+}
+
+void enter_word()
+{
 	int i = 0;
 	char ch;
 	printf("GRACZ 1: wpisz slowo:");
@@ -40,34 +65,7 @@ int main()
 			i++;
 			printf("*");
 		}
+
 	}
-	printf("\nLength:%d",i);
-	
-	printf("\nGRACZ 2: odgadnij slowo:\n");
-
-	//scanf_s("%s", word2);
-	gets(word2);
-
-	int result;
-	result=strcmp(word, word2);
-
-	printf("porownanie %d\n", result);
-
-	if (result = 1) {
-		printf("\n Wygrałes");
-	}
-	else
-	{
-		printf("\n Sprobuj jeszcze raz ");
-	}
-	getch();
-
-	
-
-	return 0;
-
-	
-
-
-
+	printf("\nLength:%u", strlen(word));
 }
